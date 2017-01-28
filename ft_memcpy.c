@@ -6,17 +6,17 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 14:02:03 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/01/09 14:40:05 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/01/17 14:39:57 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	char	*dest_temp;
 	char	*src_temp;
-	int		i;
+	size_t	i;
 
 	dest_temp = (char *)dst;
 	src_temp = (char *)src;
@@ -26,4 +26,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		dest_temp[i] = src_temp[i];
 		i++;
 	}
+	return (dst);
 }

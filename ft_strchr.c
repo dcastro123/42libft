@@ -6,11 +6,11 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/07 17:58:16 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/01/09 14:48:13 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/01/17 15:14:08 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -20,5 +20,5 @@ char	*ft_strchr(const char *s, int c)
 			return (NULL);
 		s++;
 	}
-	return (s);
+	return ((char *)s);
 }

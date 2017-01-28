@@ -6,25 +6,27 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/06 17:51:26 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/01/06 18:42:48 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/01/19 15:35:39 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	char	*temp;
+	unsigned long	i;
+	unsigned long	j;
 
-	temp = s1;
-	if (*s2 == '\0')
-		return (NULL);
-	while (*s1 != '\0')
-		s1++;
-	while (*s2 = *s1)
+	i = 0;
+	j = 0;
+	while (s1[i])
+		i++;
+	while (s2[j])
 	{
-		s1++;
-		s2++;
+		s1[i] = s2[j];
+		i++;
+		j++;
 	}
-	return (temp);
+	s1[i] = '\0';
+	return (s1);
 }

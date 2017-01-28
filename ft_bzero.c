@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/09 13:28:31 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/01/09 13:43:58 by dcastro-         ###   ########.fr       */
+/*   Created: 2017/01/20 12:49:02 by dcastro-          #+#    #+#             */
+/*   Updated: 2017/01/20 12:49:05 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

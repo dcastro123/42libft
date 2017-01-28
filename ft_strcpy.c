@@ -6,9 +6,11 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 11:45:53 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/01/05 20:46:23 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/01/19 15:18:07 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char			*ft_strcpy(char *dest, char *src)
 {
@@ -20,5 +22,6 @@ char			*ft_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 		i++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }

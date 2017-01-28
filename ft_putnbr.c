@@ -6,29 +6,28 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 12:13:01 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/01/05 12:22:28 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/01/24 18:51:24 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-static void		ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#include "libft.h"
 
 void			ft_putnbr(int n)
 {
-	if (n < 0)
+	if (n == -2147483648)
+	{
+		ft_putstr("-2147483648");
+	}
+	if (n < 0 && n > -2147483648)
 	{
 		ft_putchar('-');
-		n = n * (-1);
+		n *= -1;
 	}
-	if (n >= 10)
+	if (n < 10 && n > -2147483648)
+		ft_putchar(n + 48);
+	else if (n >= 10)
 	{
 		ft_putnbr(n / 10);
-		ft_putchar(n % 10 + '0');
+		ft_putnbr(n % 10);
 	}
-	else
-		ft_putchar(n + '0');
 }

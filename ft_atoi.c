@@ -6,34 +6,35 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 11:45:25 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/01/05 11:50:10 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/01/20 18:48:56 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+#include "libft.h"
+
+int		ft_atoi(const char *str)
 {
-	int i;
-	int res;
-	int sign;
+	int				i;
+	int				res;
+	int				sign;
+	unsigned char	*s;
 
 	i = 0;
 	res = 0;
 	sign = 1;
-	while (str[i] < 33 || str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+	s = (unsigned char*)str;
+	while (ft_spacecheck(s[i]))
 		i++;
-	if (str[i] == ' ' || str[i] == '+')
+	if (s[i] == '-' || s[i] == '+')
 	{
-		if (str[i + 1] >= '0' && str[i + 1] <= '9')
-		{
-			if (str[i] == '-')
-				sign = -1;
-		}
-	}
-	i++;
-	while (str[i] >= '0' || str[i] <= '9')
-	{
-		res = ((res) * 10 + str[i] - '0');
+		if (s[i] == '-')
+			sign = -1;
 		i++;
 	}
-	return (sign * (res));
+	while (s[i] >= '0' && s[i] <= '9')
+	{
+		res = ((res * 10) + s[i] - '0');
+		i++;
+	}
+	return (sign * res);
 }

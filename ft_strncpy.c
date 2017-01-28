@@ -6,29 +6,28 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 17:59:03 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/01/06 14:11:06 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/01/20 12:47:14 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	int		i;
+	size_t	i;
 	char	*temp;
 
 	i = 0;
 	temp = dst;
-	while (len > 0 && src[i] != '\0')
+	while (i < len && src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;
-		--len;
 	}
-	while (len > 0)
+	while (i < len)
 	{
 		dst[i] = '\0';
-		len--;
+		i++;
 	}
 	return (temp);
 }
